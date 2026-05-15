@@ -17,20 +17,20 @@
       0%,100% { transform: translateY(0) rotate(0deg); }
       50%      { transform: translateY(-20px) rotate(5deg); }
     }
-    .animate-float { animation: float 4s ease-in-out infinite; }
+    .animate-float { animation: float 8s ease-in-out infinite; }
 
     @keyframes particle {
       0%   { opacity:0; transform:translateY(0); }
       50%  { opacity:1; }
       100% { opacity:0; transform:translateY(-100px); }
     }
-    .animate-particle { animation: particle 4s ease-in-out infinite; }
+    .animate-particle { animation: particle 8s ease-in-out infinite; }
 
     @keyframes spin-slow {
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
-    .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+    .animate-spin-slow { animation: spin-slow 40s linear infinite; }
 
     @keyframes gridMove {
       0%   { transform: translate(0,0); }
@@ -41,7 +41,7 @@
         linear-gradient(rgba(16,185,129,.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(16,185,129,.1) 1px, transparent 1px);
       background-size: 50px 50px;
-      animation: gridMove 20s linear infinite;
+      animation: gridMove 40s linear infinite;
     }
 
     @keyframes fadeInUp {
@@ -62,16 +62,16 @@
     }
     .fade-in-scale { animation: fadeInScale .2s cubic-bezier(.4,0,.2,1) both; }
 
-    button { transition: all .25s cubic-bezier(.4,0,.2,1); }
+    button { transition: all .4s cubic-bezier(.4,0,.2,1); }
 
-    .btn-smooth { transition: all .25s cubic-bezier(.4,0,.2,1); }
+    .btn-smooth { transition: all .4s cubic-bezier(.4,0,.2,1); }
     .btn-smooth:active { transform: scale(.96); }
 
-    .btn-primary { transition: all .25s cubic-bezier(.4,0,.2,1); }
+    .btn-primary { transition: all .4s cubic-bezier(.4,0,.2,1); }
     .btn-primary:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 20px 40px rgba(16,185,129,.35); }
     .btn-primary:active { transform: translateY(0) scale(.97); box-shadow: 0 8px 16px rgba(16,185,129,.2); }
 
-    .card-hover { transition: all .25s cubic-bezier(.4,0,.2,1); }
+    .card-hover { transition: all .4s cubic-bezier(.4,0,.2,1); }
     .card-hover:hover { transform: translateY(-2px); }
     .card-hover:active { transform: scale(.98); }
 
@@ -81,7 +81,7 @@
     .pipeline-btn.active .step-num { background: rgb(16,185,129); color:#fff; box-shadow: 0 4px 12px rgba(16,185,129,.4); }
     .pipeline-btn.active .step-title { color: #fff; }
 
-    .answer-btn { transition: all .22s ease; }
+    .answer-btn { transition: all .35s ease; }
     .answer-btn.correct { background: rgba(34,197,94,.2); border-color: rgb(34,197,94); color: rgb(134,239,172); }
     .answer-btn.wrong   { background: rgba(239,68,68,.2);  border-color: rgb(239,68,68);  color: rgb(252,165,165); }
     .answer-btn.dimmed  { background: rgba(30,41,59,.4);   border-color: rgb(30,41,59);   color: rgb(71,85,105); opacity:.4; }
@@ -98,7 +98,7 @@
       gap: 6px;
       padding: 10px 6px 8px;
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all .3s ease;
       min-width: 0;
     }
     .sheet-tab:hover { background: #273548; border-color: #4a5568; }
@@ -137,7 +137,7 @@
       display: flex; align-items: center; justify-content: center;
       cursor: pointer;
       color: #fff;
-      transition: background .2s;
+      transition: background .3s;
     }
     .sheet-nav-btn:hover { background: rgba(255,255,255,.28); }
     .sheet-body { padding: 24px 24px 20px; }
@@ -147,7 +147,7 @@
       border: 1px solid #253050;
       border-radius: 12px;
       padding: 18px 18px 16px;
-      transition: border-color .2s, transform .2s;
+      transition: border-color .3s, transform .3s;
     }
     .item-card:hover { border-color: #3d5080; transform: translateY(-2px); }
 
@@ -198,7 +198,7 @@
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transition: max-height .3s ease, opacity .25s ease;
+      transition: max-height .5s ease, opacity .4s ease;
     }
     .explanation-box.open { max-height: 200px; opacity: 1; }
 
@@ -206,7 +206,7 @@
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transition: max-height .25s ease, opacity .2s ease;
+      transition: max-height .4s ease, opacity .3s ease;
     }
     .next-btn-wrap.open { max-height: 80px; opacity: 1; }
 
@@ -455,7 +455,12 @@ const CHEAT_SHEETS = [
       {label:'R (Rotate)',    title:'Вращение',             desc:'Вращает объект вокруг пивота. R -> X -> 90: повернёт объект ровно на 90 градусов по оси X.'},
       {label:'S (Scale)',     title:'Масштаб',              desc:'Изменяет размер. S -> Shift+Z масштабирует толщину, не меняя высоту объекта.'},
       {label:'E (Extrude)',   title:'Выдавливание',         desc:'Основной инструмент создания формы. Вытягивает выбранный полигон, создавая новую геометрию.'},
-      {label:'Ctrl+B',        title:'Фаска',                desc:'Сглаживает острые углы. Покрутите колёсико мыши для увеличения сегментов.'}
+      {label:'Ctrl+B',        title:'Фаска',                desc:'Сглаживает острые углы. Покрутите колёсико мыши для увеличения сегментов.'},
+      {label:'I (Inset)',     title:'Вставка',               desc:'Создаёт внутреннюю грань внутри выделенного полигона. Удобно для создания панелей и углублений.'},
+      {label:'F (Fill)',      title:'Заполнение',            desc:'Заполняет отверстие полигоном. Для выделения вершин и рёбер.'},
+      {label:'Alt+Click',     title:'Выделение петли',       desc:'Выделяет всю петлю рёбер или граней. Двойной клик — выделение всей грани.'},
+      {label:'Ctrl+R',        title:'Loop Cut',              desc:'Добавляет кольцевой разрез. Колёсико мыши — количество разрезов.'},
+      {label:'M (Merge)',     title:'Объединение',           desc:'Объединяет вершины в центре, по курсору или по расстоянию.'}
     ]
   },
   {
@@ -468,7 +473,12 @@ const CHEAT_SHEETS = [
       {label:'Support Loops',  title:'Поддерживающие петли',   desc:'Дополнительные кольца рядом с острыми рёбрами для SubD.'},
       {label:'Manifold',       title:'Замкнутость меша',        desc:'Каждое ребро должно принадлежать ровно 2 полигонам.'},
       {label:'Apply Scale',    title:'Ctrl+A → Scale',         desc:'Перед экспортом масштаб должен быть (1,1,1).'},
-      {label:'Нормали',        title:'Направление полигонов',  desc:'Alt+N → Recalculate Outside. Синий цвет = наружу.'}
+      {label:'Нормали',        title:'Направление полигонов',  desc:'Alt+N → Recalculate Outside. Синий цвет = наружу.'},
+      {label:'Pole Vertices',  title:'5-вершинные узлы',       desc:'Избегайте вершин с 5+ рёбрами в деформируемых областях. Только на плоских поверхностях.'},
+      {label:'Subdivision',    title:'SubD готовность',        desc:'Меш должен выглядеть гладко после Catmull-Clark subdivision.'},
+      {label:'Crease',         title:'Контроль острых рёбер',  desc:'Используйте Crease (Shift+E) для контроля острых углов без добавления петель.'},
+      {label:'Bevel Weight',   title:'Вес фаски',              desc:'Назначайте вес рёбрам для контролируемой фаски через модификатор Bevel.'},
+      {label:'Grid Fill',      title:'Заполнение сеткой',      desc:'Ctrl+F → Grid Fill заполняет отверстие правильной сеткой из квадов.'}
     ]
   },
   {
@@ -491,7 +501,11 @@ const CHEAT_SHEETS = [
       {label:'Stretching',     title:'Растяжение — ноль',   desc:'Проверяйте через UV → Show Stretch. Синий = ок.'},
       {label:'Padding',        title:'4–16 пикселей',       desc:'Отступ между UV-островами предотвращает «кровотечение» текстуры.'},
       {label:'Space Usage',    title:'80–90% заполнения',   desc:'Пустое место = потеря разрешения. Упаковывайте плотно.'},
-      {label:'Hard Edges',     title:'Главное правило',     desc:'Каждое жёсткое ребро ДОЛЖНО иметь UV-шов.'}
+      {label:'Hard Edges',     title:'Главное правило',     desc:'Каждое жёсткое ребро ДОЛЖНО иметь UV-шов.'},
+      {label:'Texel Density',  title:'Единая плотность',    desc:'Все объекты в сцене должны иметь одинаковую плотность текселей для равномерного качества.'},
+      {label:'UV Squares',     title:'Прямые углы',         desc:'Стремитесь к квадратным UV-формам. Избегайте L-образных и Т-образных островов.'},
+      {label:'Mirror UV',      title:'Симметрия',           desc:'Для симметричных объектов используйте одну половину UV, затем отзеркальте.'},
+      {label:'Pack Efficiently',title:'Упаковка',           desc:'Используйте автоматическую упаковку (Pack Islands) с минимальным отступом.'}
     ]
   },
   {
@@ -863,7 +877,7 @@ function setPipelineStep(idx) {
 // ════════════════════════════════════════════
 //  CHEAT SHEETS  (reference-exact design)
 // ════════════════════════════════════════════
-const ITEMS_PER_PAGE = 3; // 1 row × 3 cols
+const ITEMS_PER_PAGE = 6; // 2 rows × 3 cols
 let sheetPage = 1;
 
 function sheetGradStyle(sheet) {
