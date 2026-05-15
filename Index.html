@@ -17,20 +17,20 @@
       0%,100% { transform: translateY(0) rotate(0deg); }
       50%      { transform: translateY(-20px) rotate(5deg); }
     }
-    .animate-float { animation: float 8s ease-in-out infinite; }
+    .animate-float { animation: float 24s ease-in-out infinite; }
 
     @keyframes particle {
       0%   { opacity:0; transform:translateY(0); }
       50%  { opacity:1; }
       100% { opacity:0; transform:translateY(-100px); }
     }
-    .animate-particle { animation: particle 8s ease-in-out infinite; }
+    .animate-particle { animation: particle 24s ease-in-out infinite; }
 
     @keyframes spin-slow {
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
-    .animate-spin-slow { animation: spin-slow 40s linear infinite; }
+    .animate-spin-slow { animation: spin-slow 120s linear infinite; }
 
     @keyframes gridMove {
       0%   { transform: translate(0,0); }
@@ -41,37 +41,37 @@
         linear-gradient(rgba(16,185,129,.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(16,185,129,.1) 1px, transparent 1px);
       background-size: 50px 50px;
-      animation: gridMove 40s linear infinite;
+      animation: gridMove 120s linear infinite;
     }
 
     @keyframes fadeInUp {
       from { opacity:0; transform:translateY(18px); }
       to   { opacity:1; transform:translateY(0); }
     }
-    .fade-in-up { animation: fadeInUp .5s cubic-bezier(.4,0,.2,1) both; }
+    .fade-in-up { animation: fadeInUp 1.5s cubic-bezier(.4,0,.2,1) both; }
 
     @keyframes fadeSlideIn {
       from { opacity:0; transform:scale(.92); }
       to   { opacity:1; transform:scale(1); }
     }
-    .fade-slide-in { animation: fadeSlideIn .35s cubic-bezier(.4,0,.2,1) both; }
+    .fade-slide-in { animation: fadeSlideIn 1s cubic-bezier(.4,0,.2,1) both; }
 
     @keyframes fadeInScale {
       from { opacity:0; transform:scale(.95); }
       to   { opacity:1; transform:scale(1); }
     }
-    .fade-in-scale { animation: fadeInScale .2s cubic-bezier(.4,0,.2,1) both; }
+    .fade-in-scale { animation: fadeInScale .6s cubic-bezier(.4,0,.2,1) both; }
 
-    button { transition: all .4s cubic-bezier(.4,0,.2,1); }
+    button { transition: all 1.2s cubic-bezier(.4,0,.2,1); }
 
-    .btn-smooth { transition: all .4s cubic-bezier(.4,0,.2,1); }
+    .btn-smooth { transition: all 1.2s cubic-bezier(.4,0,.2,1); }
     .btn-smooth:active { transform: scale(.96); }
 
-    .btn-primary { transition: all .4s cubic-bezier(.4,0,.2,1); }
+    .btn-primary { transition: all 1.2s cubic-bezier(.4,0,.2,1); }
     .btn-primary:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 20px 40px rgba(16,185,129,.35); }
     .btn-primary:active { transform: translateY(0) scale(.97); box-shadow: 0 8px 16px rgba(16,185,129,.2); }
 
-    .card-hover { transition: all .4s cubic-bezier(.4,0,.2,1); }
+    .card-hover { transition: all 1.2s cubic-bezier(.4,0,.2,1); }
     .card-hover:hover { transform: translateY(-2px); }
     .card-hover:active { transform: scale(.98); }
 
@@ -81,7 +81,7 @@
     .pipeline-btn.active .step-num { background: rgb(16,185,129); color:#fff; box-shadow: 0 4px 12px rgba(16,185,129,.4); }
     .pipeline-btn.active .step-title { color: #fff; }
 
-    .answer-btn { transition: all .35s ease; }
+    .answer-btn { transition: all 1.05s ease; }
     .answer-btn.correct { background: rgba(34,197,94,.2); border-color: rgb(34,197,94); color: rgb(134,239,172); }
     .answer-btn.wrong   { background: rgba(239,68,68,.2);  border-color: rgb(239,68,68);  color: rgb(252,165,165); }
     .answer-btn.dimmed  { background: rgba(30,41,59,.4);   border-color: rgb(30,41,59);   color: rgb(71,85,105); opacity:.4; }
@@ -98,7 +98,7 @@
       gap: 6px;
       padding: 10px 6px 8px;
       cursor: pointer;
-      transition: all .3s ease;
+      transition: all .9s ease;
       min-width: 0;
     }
     .sheet-tab:hover { background: #273548; border-color: #4a5568; }
@@ -147,14 +147,20 @@
       border: 1px solid #253050;
       border-radius: 12px;
       padding: 18px 18px 16px;
-      transition: border-color .3s, transform .3s;
+      transition: border-color .9s, transform .9s;
     }
     .item-card:hover { border-color: #3d5080; transform: translateY(-2px); }
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 14px;
+    }
+    @media (max-width: 1200px) {
+      .cards-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 700px) {
       .cards-grid { grid-template-columns: 1fr 1fr; }
@@ -198,7 +204,7 @@
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transition: max-height .5s ease, opacity .4s ease;
+      transition: max-height 1.5s ease, opacity 1.2s ease;
     }
     .explanation-box.open { max-height: 200px; opacity: 1; }
 
@@ -206,7 +212,7 @@
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transition: max-height .4s ease, opacity .3s ease;
+      transition: max-height 1.2s ease, opacity .9s ease;
     }
     .next-btn-wrap.open { max-height: 80px; opacity: 1; }
 
@@ -460,7 +466,15 @@ const CHEAT_SHEETS = [
       {label:'F (Fill)',      title:'Заполнение',            desc:'Заполняет отверстие полигоном. Для выделения вершин и рёбер.'},
       {label:'Alt+Click',     title:'Выделение петли',       desc:'Выделяет всю петлю рёбер или граней. Двойной клик — выделение всей грани.'},
       {label:'Ctrl+R',        title:'Loop Cut',              desc:'Добавляет кольцевой разрез. Колёсико мыши — количество разрезов.'},
-      {label:'M (Merge)',     title:'Объединение',           desc:'Объединяет вершины в центре, по курсору или по расстоянию.'}
+      {label:'M (Merge)',     title:'Объединение',           desc:'Объединяет вершины в центре, по курсору или по расстоянию.'},
+      {label:'Shift+A',       title:'Добавить объект',      desc:'Открывает меню добавления объектов: меши, свет, камеры, эмиттеры и т.д.'},
+      {label:'Tab',           title:'Edit/Object Mode',     desc:'Переключение между режимом редактирования и объектным режимом.'},
+      {label:'X / Delete',    title:'Удалить',              desc:'Удаление вершин, рёбер, граней или целых объектов.'},
+      {label:'Ctrl+Z',        title:'Отменить',             desc:'Отмена последнего действия. Ctrl+Shift+Z — повтор отменённого.'},
+      {label:'Shift+D',       title:'Дублировать',          desc:'Создаёт копию выделенного объекта или геометрии.'},
+      {label:'H',             title:'Скрыть',               desc:'Скрыть выделенное. Alt+H — показать всё. Shift+H — скрыть невыделенное.'},
+      {label:'N',             title:'Панель свойств',       desc:'Открыть/закрыть боковую панель с трансформами и свойствами.'},
+      {label:'O',             title:'Proportional Editing', desc:'Включить пропорциональное редактирование. Влияет на соседние вершины.'}
     ]
   },
   {
@@ -478,7 +492,13 @@ const CHEAT_SHEETS = [
       {label:'Subdivision',    title:'SubD готовность',        desc:'Меш должен выглядеть гладко после Catmull-Clark subdivision.'},
       {label:'Crease',         title:'Контроль острых рёбер',  desc:'Используйте Crease (Shift+E) для контроля острых углов без добавления петель.'},
       {label:'Bevel Weight',   title:'Вес фаски',              desc:'Назначайте вес рёбрам для контролируемой фаски через модификатор Bevel.'},
-      {label:'Grid Fill',      title:'Заполнение сеткой',      desc:'Ctrl+F → Grid Fill заполняет отверстие правильной сеткой из квадов.'}
+      {label:'Grid Fill',      title:'Заполнение сеткой',      desc:'Ctrl+F → Grid Fill заполняет отверстие правильной сеткой из квадов.'},
+      {label:'Knife Tool',     title:'Инструмент нож',        desc:'K — разрезать геометрию вручную. Ctrl — под углом 45°. C — замкнуть разрез.'},
+      {label:'Bridge Loops',   title:'Соединение петель',      desc:'Соединяет два выделенных края новой геометрией. Edge Menu → Bridge Edge Loops.'},
+      {label:'Hook Modifier',  title:'Хук для анимации',      desc:'Привязывает вершины к объекту для деформации. Удобно для анимации частей.'},
+      {label:'Lattice',        title:'Решётка деформации',    desc:'Модификатор Lattice деформирует объект через внешнюю решётку.'},
+      {label:'Shrinkwrap',     title:'Обёртка на поверхность', desc:'Приклеивает геометрию к поверхности другого объекта.'},
+      {label:'Decimate',       title:'Упрощение геометрии',    desc:'Модификатор уменьшает количество полигонов. Ratio задаёт процент сохранения.'}
     ]
   },
   {
@@ -490,7 +510,19 @@ const CHEAT_SHEETS = [
       {label:'Roughness',      title:'Шероховатость',     desc:'0 = зеркало, 1 = матовый. Определяет размытость бликов.'},
       {label:'Metallic',       title:'Металличность',     desc:'0 = диэлектрик, 1 = металл. Никаких 0.5!'},
       {label:'AO',             title:'Ambient Occlusion', desc:'Запечённые контактные тени в углублениях.'},
-      {label:'Channel Packing',title:'Упаковка каналов',  desc:'ORM: R=Occlusion, G=Roughness, B=Metallic.'}
+      {label:'Channel Packing',title:'Упаковка каналов',  desc:'ORM: R=Occlusion, G=Roughness, B=Metallic.'},
+      {label:'Height Map',     title:'Карта высот',       desc:'Параллакс-окклюзия для псевдо-объёма. Требует UV и настройки.'},
+      {label:'Emission',       title:'Свечение',          desc:'Эмиссивные поверхности светятся. Цвет + интенсивность.'},
+      {label:'Opacity',        title:'Прозрачность',      desc:'Alpha канал или отдельная карта. Blend Mode: Opaque/Transparent.'},
+      {label:'Subsurface',     title:'Подповерхностное рассеивание', desc:'SSS для кожи, воска, мрамора. Свет проходит сквозь материал.'},
+      {label:'Clearcoat',      title:'Лаковое покрытие',  desc:'Дополнительный слой лака/краски. Для авто, металлов с покрытием.'},
+      {label:'Anisotropy',     title:'Анизотропия',       desc:'Направленные блики как на шлифованном металле, волосах.'},
+      {label:'Iridescence',    title:'Радужный эффект',   desc:'Тонкоплёночная интерференция: мыльные пузыри, бензиновые пятна.'},
+      {label:'Specular',       title:'Зеркальность',      desc:'Для диэлектриков. Отдельный workflow от Metallic.'},
+      {label:'Diffuse',        title:'Рассеянный свет',   desc:'Основной цвет без specular. Часть классического workflow.'},
+      {label:'Displacement',   title:'Смещение вершин',   desc:'Реальное смещение геометрии по карте высот. Tessellation.'},
+      {label:'Bent Normals',   title:'Согнутые нормали',  desc:'Улучшают AO и отражения. Учитывают затенение от соседней геометрии.'},
+      {label:'Detail Maps',    title:'Детализация',       desc:'Мелкие детали поверх основной текстуры. Для крупных объектов.'}
     ]
   },
   {
@@ -698,6 +730,150 @@ const CHEAT_SHEETS = [
       {label:'Анимация',      title:'Для SK-мешей',          desc:'Проверьте все анимации: нет вывернутых костей, веса вершин корректны, Root Motion работает правильно.'},
       {label:'Документация',  title:'Скриншоты и описание',  desc:'Turntable рендер, вайрфрейм, UV, материалы. Описание: поликаунт, разрешение текстур, особенности.'},
       {label:'Code Review',   title:'Проверка в команде',    desc:'Покажите ассет лид-артисту. Получите фидбек до интеграции. Чем раньше — тем дешевле исправить.'}
+    ]
+  },
+  {
+    id:13, title:'Моделирование пропсов', subtitle:'Создание игровых объектов', icon:'🪑',
+    grad:['#f472b6','#fb7185'],
+    items:[
+      {label:'High→Low',       title:'Правильный порядок', desc:'Сначала High-Poly со всеми фасками, потом Low-Poly с оптимальной сеткой. Запекаем детали.'},
+      {label:'Pivot Point',    title:'В нужном месте',     desc:'Для пропсов: в основании. Для симметричных: в центре. Для оружия: в рукояти.'},
+      {label:'Modular Parts',  title:'Разборные части',    desc:'Двери, окна, лестницы — делайте модульными для переиспользования в уровне.'},
+      {label:'Trim Details',   title:'Детали из trim sheet', desc:'Используйте общие детали для всех пропсов: болты, панели, решётки.'},
+      {label:'Damage Variants',title:'Версии повреждений',  desc:'Сделайте 2-3 варианта: чистый, потёртый, разрушенный. Для вариативности.'},
+      {label:'LOD Chain',      title:'Цепочка LOD',         desc:'LOD0: 100%, LOD1: 50%, LOD2: 25%, LOD3: 10%. Плавные переходы без скачков.'},
+      {label:'Collision Simple',title:'Простая коллизия',   desc:'Box, Sphere, Capsule — достаточно для большинства пропсов. Не усложняйте.'},
+      {label:'Material Limit', title:'1-2 материала',       desc:'Стремитесь к одному материалу на пропс. Два — максимум для важных объектов.'},
+      {label:'Texture Budget', title:'Разумный размер',     desc:'Мелкие пропсы: 512px или 1K. Средние: 1K-2K. Крупные: 2K-4K.'},
+      {label:'Naming Clean',   title:'Чистые имена',        desc:'SM_Prop_Chair_01, T_Prop_Chair_D. Без пробелов, кириллицы, спецсимволов.'},
+      {label:'Snap Points',    title:'Точки привязки',      desc:'Для составных объектов: точки стыковки должны совпадать по сетке.'},
+      {label:'Wear Logic',     title:'Логика износа',       desc:'Износ на краях, касаниях, углублениях. Не равномерно по всей поверхности.'},
+      {label:'Micro Details',  title:'Микро-детали',        desc:'Царапины, отпечатки, пыль — добавляют реализма. Но не переусердствуйте.'},
+      {label:'Silhouette Test',title:'Тест силуэта',        desc:'Объект должен читаться по чёрному силуэту. Если нет — упрощайте форму.'},
+      {label:'Scale Check',    title:'Проверка масштаба',   desc:'Сравнивайте с манекеном 180см. Стол ~75см, дверь ~200см, стул ~45см.'},
+      {label:'Export Ready',   title:'Готов к экспорту',    desc:'Применены все модификаторы, масштаб 1:1, нормали наружу, UV без пересечений.'},
+      {label:'Engine Import',  title:'Настройки импорта',   desc:'Включите Generate Lightmap UVs для статических пропсов с запечённым светом.'},
+      {label:'Variant System', title:'Система вариантов',   desc:'Создавайте варианты через Material Instances, а не отдельные меши.'}
+    ]
+  },
+  {
+    id:14, title:'Свет и композиция', subtitle:'Освещение сцены', icon:'💡',
+    grad:['#fbbf24','#f59e0b'],
+    items:[
+      {label:'Key Light',      title:'Ключевой свет',       desc:'Основной источник света. Определяет направление теней и настроение сцены.'},
+      {label:'Fill Light',     title:'Заполняющий свет',    desc:'Мягкий свет с противоположной стороны. Смягчает тени от ключевого.'},
+      {label:'Rim Light',      title:'Контурный свет',      desc:'Подсветка краёв объекта. Отделяет объект от фона, создаёт глубину.'},
+      {label:'Three Point',    title:'Трёхточечная схема',  desc:'Key + Fill + Rim = классическая схема освещения для презентации ассета.'},
+      {label:'HDRI Map',       title:'Окружение HDRI',      desc:'Даёт реалистичное окружение и отражения. Основа для PBR-рендеринга.'},
+      {label:'Light Temp',     title:'Температура света',   desc:'Тёплый (3000K) vs Холодный (6500K). Контраст температур создаёт интерес.'},
+      {label:'Shadow Softness',title:'Мягкость теней',      desc:'Большой источник = мягкие тени. Малый источник = жёсткие тени.'},
+      {label:'Bounce Light',   title:'Отражённый свет',     desc:'Свет, отражённый от поверхностей. Заполняет тени, создаёт цветовые рефлексы.'},
+      {label:'Volumetric Fog', title:'Объёмный туман',      desc:'God rays, световые лучи. Добавляет атмосферу и глубину сцене.'},
+      {label:'Exposure',       title:'Экспозиция',          desc:'Настройте так, чтобы ключевые области были правильно освещены. Не пересвечивайте.'},
+      {label:'Rule of Thirds', title:'Правило третей',      desc:'Разместите ключевой объект на пересечении линий thirds для композиции.'},
+      {label:'Leading Lines',  title:'Направляющие линии',  desc:'Линии в сцене должны вести взгляд к ключевому объекту.'},
+      {label:'Color Harmony',  title:'Гармония цветов',     desc:'Комплементарные, аналоговые, триадные схемы. Избегайте радуги.'},
+      {label:'Focal Point',    title:'Фокус внимания',      desc:'Одна главная точка интереса. Остальное — поддерживающие элементы.'},
+      {label:'Depth Layers',   title:'Слои глубины',        desc:'Передний план, средний, задний. Создаёт ощущение пространства.'},
+      {label:'Contrast Ratio', title:'Контраст света',      desc:'Высокий контраст = драма. Низкий = спокойствие. Подбирайте под задачу.'},
+      {label:'Light Cookies',  title:'Гобо/куки',           desc:'Текстуры на источнике света для паттернов: листья, жалюзи, окна.'},
+      {label:'Emissive Balance',title:'Баланс эмиссии',     desc:'Эмиссивные источники не должны быть ярче реальных источников света.'}
+    ]
+  },
+  {
+    id:15, title:'ZBrush скульптинг', subtitle:'Высокополигональные детали', icon:'🗿',
+    grad:['#c084fc','#a855f7'],
+    items:[
+      {label:'Dynamesh',       title:'Динамическая сетка',  desc:'Автоматически перестраивает топологию при скульптинге. Resolution контролирует плотность.'},
+      {label:'ZRemesher',      title:'Авторетопология',     desc:'Создаёт чистую топологию из скульпта. Target Polygons задаёт итоговую плотность.'},
+      {label:'Subdivision',    title:'Уровни subdivision',  desc:'Ctrl+D добавить уровень. Работайте на низких уровнях для формы, высоких для деталей.'},
+      {label:'Masking',        title:'Маскирование',        desc:'Ctrl+клик рисовать маску. Инверсия Ctrl+I. Размытие маски Ctrl+клик по холсту.'},
+      {label:'Polygroups',     title:'Полигруппы',          desc:'Ctrl+W создать группу по выделению. Полезно для выделения частей при sculpt.'},
+      {label:'Transpose',      title:'Позирование',         desc:'Move, Scale, Rotate — базовые трансформации. Mask + Transpose для деформаций.'},
+      {label:'Alpha Brushes',  title:'Альфа-кисти',         desc:'Текстуры для кистей создают сложные поверхности: кожа, чешуя, ткань.'},
+      {label:'Noise Maker',    title:'Генератор шума',      desc:'Создаёт процедурные поверхности: поры, царапины, тканевые текстуры.'},
+      {label:'Dam Standard',   title:'Стандартная борозда', desc:'Основная кисть для острых складок, швов, глубоких борозд.'},
+      {label:'Clay Buildup',   title:'Набор массы',         desc:'Добавляет объём как глина. Идеально для блокирования основных форм.'},
+      {label:'Move Topological',title:'Топологическое движение', desc:'Перемещает геометрию с учётом топологии. Для точной правки форм.'},
+      {label:'Inflate',        title:'Раздувание',          desc:'Увеличивает объём вдоль нормалей. Для мышц, пухлых форм, преувеличений.'},
+      {label:'Pinch',          title:'Щипок',               desc:'Затягивает края, создаёт острые складки. Для резких переходов и граней.'},
+      {label:'Smooth',         title:'Сглаживание',         desc:'Shift для временного доступа. Сглаживает шум и неровности скульпта.'},
+      {label:'Polish',         title:'Полировка',           desc:'Выравнивает поверхность, создаёт твёрдые грани. Для hard surface элементов.'},
+      {label:'Trim Dynamic',   title:'Динамическая обрезка', desc:'Срезает геометрию плоскостью. Для hard surface и технических деталей.'},
+      {label:'Insert Mesh',    title:'Вставка мешей',       desc:'Готовые детали: болты, заклёпки, молнии. Экономит время на моделирование.'},
+      {label:'FiberMesh',      title:'Волокна/волосы',      desc:'Генерация волос, меха, травы прямо в ZBrush. Экспорт как отдельные меши.'}
+    ]
+  },
+  {
+    id:16, title:'Мармосет и запекание', subtitle:'Marmoset Toolbag секреты', icon:'🔥',
+    grad:['#fb7185','#f43f5e'],
+    items:[
+      {label:'Import Both',    title:'Импорт High и Low',   desc:'Импортируйте оба меша. Marmoset автоматически определит пары по именам.'},
+      {label:'Cage Creation',  title:'Создание Cage',       desc:'Low-Poly → Create Cage. Expand для увеличения. Должен охватывать High-Poly.'},
+      {label:'Ray Direction',  title:'Направление лучей',   desc:'Лучи идут от Cage внутрь к High-Poly. Неправильный Cage = артефакты.'},
+      {label:'Skew Value',     title:'Skew параметр',       desc:'Корректирует направление лучей для сложных форм. Обычно 0.05-0.15.'},
+      {label:'Front/Rear Face',title:'Лицевая/задняя грань', desc:'Проверьте направление нормалей. Reverse Normals если нужно.'},
+      {label:'Match by Name',  title:'Соответствие по имени', desc:'_high/_low суффиксы или одинаковые имена для автоматического спаривания.'},
+      {label:'Explode View',   title:'Взрыв-вид',           desc:'Разнесите части для лучшего запекания. Особенно для внутренних деталей.'},
+      {label:'Bake Settings',  title:'Настройки запекания', desc:'Resolution: 2K-4K. Anti-aliasing: 4x-8x. Output: 16-bit для качества.'},
+      {label:'Normal Format',  title:'Формат нормалей',     desc:'DirectX (Y-) vs OpenGL (Y+). Unreal использует DirectX. Blender — OpenGL.'},
+      {label:'Tangent Space',  title:'Касательное пространство', desc:'Проверьте соответствие между Blender и Marmoset. Иначе нормали инвертируются.'},
+      {label:'AO Samples',     title:'Сэмплирование AO',    desc:'Высокое качество: 64-256 samples. Быстрое превью: 16-32 samples.'},
+      {label:'Curvature Maps', title:'Карты кривизны',      desc:'Concave/Convex карты для генераторов износа в Substance Painter.'},
+      {label:'ID Map',         title:'Карта идентификаторов', desc:'Разные цвета для разных материалов. Для разделения в текстуринге.'},
+      {label:'Thickness Map',  title:'Карта толщины',       desc:'Для SSS материалов. Белый = толстый, Чёрный = тонкий.'},
+      {label:'Position Map',   title:'Карта позиций',       desc:'Градиент по осям XYZ. Для градиентных масок в Substance.'},
+      {label:'Output Folder',  title:'Папка вывода',        desc:'Организуйте карты по типам: /Normals/, /AO/, /Curvature/ и т.д.'},
+      {label:'Preview Lighting',title:'Превью освещение',    desc:'Используйте HDRI для проверки результата. Studio lighting для презентации.'},
+      {label:'Batch Bake',     title:'Пакетное запекание',  desc:'Несколько объектов сразу. Экономит время при работе с наборами пропсов.'}
+    ]
+  },
+  {
+    id:17, title:'Unreal Engine 5', subtitle:'Интеграция и настройка', icon:'🎮',
+    grad:['#3b82f6','#1d4ed8'],
+    items:[
+      {label:'Nanite',         title:'Виртуальная геометрия', desc:'Включите Nanite для детализированных мешей. Автоматический LOD, никаких лимитов полигонов.'},
+      {label:'Lumen',          title:'Глобальное освещение',  desc:'Real-time GI и отражения. Не требует запекания света. Требует GPU RTX или современный AMD.'},
+      {label:'Virtual Textures',title:'Виртуальные текстуры', desc:'Стриминг текстур по мере необходимости. Позволяет использовать 8K+ текстуры.'},
+      {label:'Material Instance',title:'Инстансы материалов', desc:'Быстрые вариации Master Material. Меняйте параметры без перекомпиляции шейдера.'},
+      {label:'Static Mesh',    title:'Статический меш',       desc:'SM_ префикс. Неподвижные объекты. Генерируют Lightmass GI при запекании.'},
+      {label:'Skeletal Mesh',  title:'Скелетный меш',        desc:'SK_ префикс. Анимированные персонажи, оружие, двери. Требуют скелет.'},
+      {label:'Blueprint',      title:'Блупринт логика',      desc:'BP_ префикс. Программирование визуальными нодами. Логика, интерактивность.'},
+      {label:'Data Asset',     title:'Ассет данных',         desc:'DA_ префикс. Настройки, конфигурации, таблицы данных.'},
+      {label:'Render Settings',title:'Настройки рендера',    desc:'Project Settings → Rendering. Включите Nanite, Lumen, Virtual Textures.'},
+      {label:'Post Process',   title:'Пост-процессинг',      desc:'PPV объёмы для зон. Bloom, DOF, Color Grading, Film Grain, Vignette.'},
+      {label:'Quixel Bridge',  title:'Интеграция Megascans',  desc:'Прямой импорт из Quixel в UE. Бесплатно для пользователей Unreal.'},
+      {label:'World Partition',title:'Разделение мира',      desc:'Автоматический стриминг больших миров. Заменяет ручной Level Streaming.'},
+      {label:'PCG Framework',  title:'Процедурная генерация', desc:'Procedural Content Generation. Автоматическое размещение объектов по правилам.'},
+      {label:'MetaHuman',      title:'Реалистичные персонажи', desc:'Готовые цифровые люди. Интеграция с анимацией через LiveLink.'},
+      {label:'Control Rig',    title:'Риггинг в UE',         desc:'Создание и правка ригов прямо в движке. Для коррекции анимации.'},
+      {label:'Sequencer',      title:'Кинематография',       desc:'Timeline для катсцен, трейлеров, презентаций. Как Premiere в UE.'},
+      {label:'Chaos Physics',  title:'Физика Chaos',         desc:'Разрушения, ткань, волосы. Real-time симуляция в UE5.'},
+      {label:'Niagara FX',     title:'Система частиц',       desc:'Современная система эффектов. Огонь, дым, искры, магия, погода.'}
+    ]
+  },
+  {
+    id:18, title:'Портфолио художника', subtitle:'Как показать работы', icon:'📁',
+    grad:['#14b8a6','#0d9488'],
+    items:[
+      {label:'Quality Over Quantity',title:'Качество важнее', desc:'5 отличных работ лучше 20 посредственных. Показывайте только лучшее.'},
+      {label:'Process Breakdown',title:'Показ процесса',     desc:'Wireframe, UV, Texture sheets, Turntable. Арт-директора хотят видеть процесс.'},
+      {label:'Turntable Render',title:'Вращение модели',     desc:'360° видео или GIF. Показывает модель со всех сторон. Обязательно для 3D.'},
+      {label:'Context Shot',   title:'В контексте',          desc:'Покажите ассет в игровой среде. Как он будет выглядеть в игре.'},
+      {label:'Technical Info', title:'Техническая информация', desc:'Polycount, Texture sizes, Tools used. Показывает понимание оптимизации.'},
+      {label:'Before/After',   title:'До и после',           desc:'Блокаут → Финал. Высокополигон → Лоуполи. Показывает ваш рабочий процесс.'},
+      {label:'ArtStation Pro', title:'ArtStation профиль',    desc:'Стандарт индустрии. Держите портфолио там. recruiters ищут там.'},
+      {label:'Personal Brand', title:'Личный бренд',          desc:'Единый стиль, логотип, цвета. Вас должны запомнить.'},
+      {label:'Social Media',   title:'Социальные сети',       desc:'Twitter/X, Instagram, LinkedIn. Делитесь работами регулярно.'},
+      {label:'Networking',     title:'Нетворкинг',            desc:'Общайтесь с другими художниками. Комментари, фидбек, коллаборации.'},
+      {label:'Daily Practice', title:'Ежедневная практика',   desc:'Регулярность важнее интенсивности. Лучше 1 час каждый день чем 10 раз в месяц.'},
+      {label:'Study Masters',  title:'Изучайте мастеров',     desc:'Анализируйте работы топовых художников. Поймите почему они работают.'},
+      {label:'Feedback Loop',  title:'Получайте фидбек',      desc:'Показывайте работы сообществу. Критика помогает расти быстрее.'},
+      {label:'Specialization', title:'Специализация',         desc:'Environment, Character, Props, Vehicles. Будьте экспертом в чём-то одном.'},
+      {label:'Game Ready',     title:'Готовность к игре',     desc:'Показывайте что ваши ассеты оптимизированы и готовы к продакшену.'},
+      {label:'Version Control',title:'Контроль версий',       desc:'Сохраняйте старые версии работ. Видно прогресс за время.'},
+      {label:'Case Studies',   title:'Кейс-стади',           desc:'Подробные разборы отдельных работ. Блог-посты с процессом создания.'},
+      {label:'Contact Info',   title:'Контактная информация', desc:'Email, соцсети — легко найти. Recruiters не будут искать долго.'}
     ]
   }
 ];
