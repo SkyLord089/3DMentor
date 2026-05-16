@@ -1,1 +1,1 @@
-Nothing should be ignored based on the provided file changes. The modification of 'Index.html' represents a standard source file change without any build artifacts, dependencies, or temporary files that would warrant adding ignore rules.
+Nothing should be ignored in this case, as the changes only include HTML files (sheets.html and Index.html) which are source files and not build artifacts, dependencies, or temporary files.
