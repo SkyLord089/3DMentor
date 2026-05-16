@@ -253,7 +253,7 @@
         </div>
         <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
           <a href="#pipeline" class="text-slate-400 hover:text-emerald-400 transition-colors duration-200">Пайплайн</a>
-          <a href="#sheets"   class="text-slate-400 hover:text-emerald-400 transition-colors duration-200">Шпаргалки</a>
+          <a href="sheets.html" class="text-slate-400 hover:text-emerald-400 transition-colors duration-200">Шпаргалки</a>
           <a href="#quiz"     class="text-slate-400 hover:text-emerald-400 transition-colors duration-200">Тест</a>
         </div>
       </div>
@@ -332,27 +332,6 @@
         <!-- Detail -->
         <div class="lg:w-2/3" id="pipelineDetail"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ CHEAT SHEETS ═══════════════════ -->
-  <section id="sheets" class="py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Все шпаргалки</h2>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-          Выберите тему для подробного изучения. Каждая памятка содержит
-          объяснения ключевых понятий 3D графики.
-        </p>
-      </div>
-
-      <!-- Tab Bar -->
-      <div style="background:#131c2e; border:1px solid #1e2d44; border-radius:18px; padding:14px 14px 20px; margin-bottom:12px; position:relative; overflow:hidden;">
-        <div class="sheet-tabs-grid" style="display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:6px; position:relative;" id="sheetTabs"></div>
-      </div>
-
-      <!-- Sheet Card -->
-      <div id="sheetContent"></div>
     </div>
   </section>
 
@@ -1171,8 +1150,6 @@ function nextQuestion() {
 document.addEventListener('DOMContentLoaded', () => {
   initBg();
   renderPipeline();
-  renderSheetTabs();
-  renderSheetContent();
   renderQuiz();
 });
 </script>

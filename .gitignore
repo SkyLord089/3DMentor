@@ -1,1 +1,1 @@
-Nothing needs to be added to .gitignore since only a JavaScript source file (sheets.js) was added, which is a source code file that should be tracked in version control. No build artifacts, dependencies, or temporary files were included in the changes.
+Nothing should be ignored in this case, as the changes only include HTML files (sheets.html and Index.html) which are source files and not build artifacts, dependencies, or temporary files.
