@@ -475,17 +475,6 @@ const CHEAT_SHEETS = [
       {label:'H',             title:'Скрыть',               desc:'Скрыть выделенное. Alt+H — показать всё. Shift+H — скрыть невыделенное.'},
       {label:'N',             title:'Панель свойств',       desc:'Открыть/закрыть боковую панель с трансформами и свойствами.'},
       {label:'O',             title:'Proportional Editing', desc:'Включить пропорциональное редактирование. Влияет на соседние вершины.'}
-    
-      {label:'Ctrl+Alt+Shift', title:'Сброс трансформов', desc:'Сбрасывает трансформы выделенного объекта в ноль.'}, 
-      {label:'F9', title:'Последняя операция', desc:'Открывает панель последней операции для настройки параметров.'}, 
-      {label:'Ctrl+F', title:'Поиск операций', desc:'Быстрый поиск любой операции по названию.'}, 
-      {label:'Mouse Drag', title:'Перетаскивание', desc:'Зажмите ЛКМ и тяните для быстрого перемещения/вращения/масштаба.'}, 
-      {label:'Shift+Click', title:'Добавить к выделению', desc:'Добавляет объект к текущему выделению.'}, 
-      {label:'Ctrl+I', title:'Инвертировать выделение', desc:'Инвертирует текущее выделение объектов или вершин.'}, 
-    
-      {label:'Viewport Nav', title:'Навигация вьюпорта', desc:'Shift+Middle Mouse для панорамирования вьюпорта.'}, 
-      {label:'Local View', title:'Локальный вид', desc:'/ - изолировать выделенные объекты.'}, 
-      {label:'Render Preview', title:'Превью рендера', desc:'Z → Rendered для финального превью.'}, 
     ]
   },
   {
@@ -510,13 +499,6 @@ const CHEAT_SHEETS = [
       {label:'Lattice',        title:'Решётка деформации',    desc:'Модификатор Lattice деформирует объект через внешнюю решётку.'},
       {label:'Shrinkwrap',     title:'Обёртка на поверхность', desc:'Приклеивает геометрию к поверхности другого объекта.'},
       {label:'Decimate',       title:'Упрощение геометрии',    desc:'Модификатор уменьшает количество полигонов. Ratio задаёт процент сохранения.'}
-    
-      {label:'Pole Limitation', title:'Ограничение полюсов', desc:'Минимизируйте вершины с 5+ рёбрами на деформируемых участках.'}, 
-      {label:'Edge Loop Select', title:'Выделение петли', desc:'Alt+Click выделяет всю петлю рёбер мгновенно.'}, 
-      {label:'Checker Deform', title:'Тест деформации', desc:'Проверьте меш на сгибах перед экспортом в движок.'}, 
-      {label:'Topology Brush', title:'Кисть топологии', desc:'В sculpt mode используйте拓扑 кисти для быстрой правки.'}, 
-      {label:'Quad Dominant', title:'Преобладание квадов', desc:'Стремитесь к 95%+ квадов на персонажах.'}, 
-      {label:'Flow Consistency', title:'Консистентность потока', desc:'Рёбра должны течь равномерно без резких изменений.'}, 
     ]
   },
   {
@@ -541,17 +523,6 @@ const CHEAT_SHEETS = [
       {label:'Displacement',   title:'Смещение вершин',   desc:'Реальное смещение геометрии по карте высот. Tessellation.'},
       {label:'Bent Normals',   title:'Согнутые нормали',  desc:'Улучшают AO и отражения. Учитывают затенение от соседней геометрии.'},
       {label:'Detail Maps',    title:'Детализация',       desc:'Мелкие детали поверх основной текстуры. Для крупных объектов.'}
-    
-      {label:'Linear Workflow', title:'Линейный воркфлоу', desc:'Всегда работайте в linear space для корректного PBR.'}, 
-      {label:'Texture Bleeding', title:'Предотвращение bleeding', desc:'Используйте proper padding на UV островах.'}, 
-      {label:'Material ID', title:'ID материала', desc:'Разные материалы = разные texture sets в движке.'}, 
-      {label:'Reflectivity', title:'Отражательная способность', desc:'Диэлектрики: 4% отражение, металлы: 70-100%.'}, 
-      {label:'Albedo Test', title:'Тест альбедо', desc:'Проверьте albedo в нейтральном освещении без теней.'}, 
-      {label:'Roughness Variation', title:'Вариация roughness', desc:'Добавьте микро-вариации для реализма поверхности.'}, 
-    
-      {label:'PBR Validator', title:'Валидатор PBR', desc:'Используйте Marmoset Viewer для проверки PBR.'}, 
-      {label:'Texture Atlas', title:'Текстурный атлас', desc:'Объединяйте текстуры для оптимизации.'}, 
-      {label:'Color Space', title:'Цветовое пространство', desc:'Проверьте color space settings в движке.'}, 
     ]
   },
   {
@@ -576,13 +547,6 @@ const CHEAT_SHEETS = [
       {label:'Overlap Check',  title:'Проверка пересечений', desc:'Убедитесь что острова не пересекаются. Иначе текстура «пропечётся» неправильно.'},
       {label:'Pivot Points',   title:'Пивоты островов',     desc:'Выровняйте пивоты островов для упрощения работы с три-planar проекциями.'},
       {label:'Relax Tool',     title:'Инструмент Relax',    desc:'Используйте Relax для распределения искажений равномерно по острову.'}
-    
-      {label:'UV Border', title:'Границы UV', desc:'Держите острова в пределах 0-1 UV пространства.'}, 
-      {label:'Minimal Distortion', title:'Минимум искажений', desc:'Искажения <5% считаются приемлемыми для игр.'}, 
-      {label:'Seam Placement', title:'Размещение швов', desc:'Планируйте швы до начала моделирования.'}, 
-      {label:'UV Density Map', title:'Карта плотности UV', desc:'Используйте для проверки равномерности texel density.'}, 
-      {label:'Pack Margin', title:'Отступ упаковки', desc:'Автоматическая упаковка с margin предотвращает артефакты.'}, 
-      {label:'UV Mirror', title:'Зеркалирование UV', desc:'Для симметричных объектов экономит 50% текстуры.'}, 
     ]
   },
   {
@@ -607,17 +571,6 @@ const CHEAT_SHEETS = [
       {label:'Texture Import',  title:'sRGB флаг',              desc:'Albedo/Emissive: sRGB=On. Normal/Roughness/Metallic/AO: sRGB=Off (Linear). Ошибка здесь = неверный PBR.'},
       {label:'Collision Preset',title:'В настройках Static Mesh', desc:'BlockAll для стен и полов. OverlapAll для триггеров. NoCollision для мелкого декора (трава, пыль).'},
       {label:'Auto LOD',        title:'UE Auto LOD',             desc:'UE генерирует LOD автоматически при импорте. Проверяйте результат — иногда лучше сделать вручную.'}
-    
-      {label:'Binary FBX', title:'Бинарный формат', desc:'Binary FBX меньше и быстрее чем ASCII.'}, 
-      {label:'Embed Media', title:'Встроенные медиа', desc:'Не используйте embed media для текстур в играх.'}, 
-      {label:'Unit Scale', title:'Масштаб единиц', desc:'Проверьте unit scale перед экспортом.'}, 
-      {label:'Animation Range', title:'Диапазон анимации', desc:'Экспортируйте только нужный диапазон кадров.'}, 
-      {label:'Custom Normals', title:'Кастомные нормали', desc:'Сохраняйте custom normals для правильного shading.'}, 
-      {label:'UE Import Preset', title:'Пресет импорта UE', desc:'Создайте пресет для консистентного импорта.'}, 
-    
-      {label:'LOD Tools', title:'Инструменты LOD', desc:'Используйте автоматические LOD tools в UE.'}, 
-      {label:'Collision Complex', title:'Сложная коллизия', desc:'UCX_ префикс для custom collision.'}, 
-      {label:'Import Log', title:'Лог импорта', desc:'Проверьте import log на ошибки.'}, 
     ]
   },
   {
@@ -642,13 +595,6 @@ const CHEAT_SHEETS = [
       {label:'Hlod',          title:'Hierarchical LOD',     desc:'UE группирует целые зоны в один меш на дальней дистанции. Настраивается в World Outliner → HLOD.'},
       {label:'Lightmap Res',  title:'Разрешение лайтмапа',  desc:'Слишком маленькое = мутные запечённые тени. Слишком большое = долгая сборка и много VRAM. Обычно 64–256.'},
       {label:'Streaming',     title:'Потоковая загрузка',   desc:'UE загружает меши и текстуры по мере приближения камеры. Важно разбивать большие сцены на стримируемые ячейки.'}
-    
-      {label:'Stat Unit', title:'Статистика юнитов', desc:'Use stat unit в UE для анализа FPS.'}, 
-      {label:'LOD Transition', title:'Переход LOD', desc:'Настройте smooth transition между LOD.'}, 
-      {label:'Vertex Animation', title:'Вершинная анимация', desc:'Дешевле скелетной для простых объектов.'}, 
-      {label:'Material Instancing', title:'Инстансы материалов', desc:'Используйте material instances вместо новых материалов.'}, 
-      {label:'Texture Streaming', title:'Стриминг текстур', desc:'Включите texture streaming для больших миров.'}, 
-      {label:'Nanite Fallback', title:'Fallback для Nanite', desc:'Настройте fallback mesh для старых GPU.'}, 
     ]
   },
   {
@@ -673,17 +619,6 @@ const CHEAT_SHEETS = [
       {label:'World-Space Normal',title:'Мировые нормали', desc:'Координаты нормалей в мировом пространстве, а не касательном. Используются для тайловых материалов окружения.'},
       {label:'Bent Normals',    title:'Согнутые нормали',  desc:'Направление нормалей, усреднённое для AO. Улучшают качество Ambient Occlusion и отражений в реальном времени.'},
       {label:'Bake Resolution', title:'2K / 4K',           desc:'Запекайте в максимальном разрешении (4K), потом масштабируйте. Нельзя получить детали, которых нет в исходнике.'}
-    
-      {label:'Ray Casting', title:'Бросание лучей', desc:'Настройте ray distance для избежания артефактов.'}, 
-      {label:'Transfer Attributes', title:'Передача атрибутов', desc:'Используйте transfer attributes в Blender.'}, 
-      {label:'Bake Selection', title:'Выпекание выделения', desc:'Запекайте только выделенные части для скорости.'}, 
-      {label:'Normal Filter', title:'Фильтр нормалей', desc:'Используйте box filter для мягких переходов.'}, 
-      {label:'AO Radius', title:'Радиус AO', desc:'Малый радиус для деталей, большой для общих теней.'}, 
-      {label:'Curvature Quality', title:'Качество curvature', desc:'High quality curvature для лучших wear эффектов.'}, 
-    
-      {label:'Bake Quality', title:'Качество запекания', desc:'Higher samples = cleaner bake.'}, 
-      {label:'Normal Format', title:'Формат нормалей', desc:'DirectX vs OpenGL normals matter.'}, 
-      {label:'Tangent Basis', title:'Базис тангентов', desc:'Match tangent basis between apps.'}, 
     ]
   },
   {
@@ -708,13 +643,6 @@ const CHEAT_SHEETS = [
       {label:'Sculpting Phase',title:'Этап скульпта',         desc:'ZBrush / Blender Sculpt: добавляем поры, складки, морщины. Потом ретопология и запекание в нормал-мапу.'},
       {label:'Rigging Proxy',  title:'Прокси риг',            desc:'Упрощённый скелет для аниматора. Сложный деформационный скелет скрыт. Привязка через constraints.'},
       {label:'Facial Rig',     title:'Риг лица',              desc:'Сочетание костей и Shape Keys. FACS (Facial Action Coding System) — стандарт для реалистичной мимики.'}
-    
-      {label:'Anatomy Study', title:'Изучение анатомии', desc:'Изучите мышцы и кости для реалистичных персонажей.'}, 
-      {label:'Silhouette Test', title:'Тест силуэта', desc:'Персонаж должен быть узнаваем по силуэту.'}, 
-      {label:'Costume Design', title:'Дизайн костюма', desc:'Одежда должна соответствовать сеттингу игры.'}, 
-      {label:'Expression Sheet', title:'Лист эмоций', desc:'Создайте sheet с основными эмоциями персонажа.'}, 
-      {label:'Turnaround', title:'Разворот', desc:'Сделайте turnaround вид спереди/сзади/боку.'}, 
-      {label:'Prop Integration', title:'Интеграция пропсов', desc:'Учтите пропсы в дизайне персонажа.'}, 
     ]
   },
   {
@@ -739,17 +667,6 @@ const CHEAT_SHEETS = [
       {label:'Pose Library', title:'Библиотека поз',        desc:'Сохраняйте часто используемые позы (руки, мимика). В Blender: Pose Library addon. Ускоряет работу аниматора.'},
       {label:'Action Editor',title:'Клипы анимаций',        desc:'Каждая анимация — отдельный Action (Run, Jump, Idle). Имена: CH_Name_Idle, CH_Name_Run_Fwd и т.д.'},
       {label:'Secondary Motion',title:'Вторичное движение', desc:'Запаздывание волос, одежды, ушей после основного движения. Создаёт ощущение веса и реализма.'}
-    
-      {label:'Rig Testing', title:'Тестирование рига', desc:'Проверьте все extreme poses перед анимацией.'}, 
-      {label:'FK IK Blend', title:'Смешивание FK/IK', desc:'Используйте blend для плавных переходов.'}, 
-      {label:'Secondary Anim', title:'Вторичная анимация', desc:'Добавьте overlap для волос и одежды.'}, 
-      {label:'Weight Mirroring', title:'Зеркалирование весов', desc:'Mirror weights для симметричных персонажей.'}, 
-      {label:'Control Visibility', title:'Видимость контролов', desc:'Скройте контролы для финального рендера.'}, 
-      {label:'Anim Layering', title:'Слои анимации', desc:'Используйте layers для non-destructive анимации.'}, 
-    
-      {label:'Motion Capture', title:'Мокап данные', desc:'Используйте mocap для реалистичной анимации.'}, 
-      {label:'Cycle Check', title:'Проверка цикла', desc:'Убедитесь что цикл анимации бесшовный.'}, 
-      {label:'Root Lock', title:'Блокировка корня', desc:'Lock root bone для idle анимаций.'}, 
     ]
   },
   {
@@ -774,13 +691,6 @@ const CHEAT_SHEETS = [
       {label:'Ambient Sounds', title:'Звуковые зоны',       desc:'Ambient Sound Actors с Attenuation shape: звук дождя, капель, ветра привязан к геометрии локации.'},
       {label:'Post Process Vol.',title:'Атмосфера',         desc:'Bloom, Depth of Field, Color Grading, Fog — задают настроение локации. Каждая зона может иметь свой PPV.'},
       {label:'Mega Scan',     title:'Quixel Megascans',     desc:'Библиотека фотограмметрических ассетов. Бесплатно для UE. Поверхности, камни, трава — фотореалистичные.'}
-    
-      {label:'Level Blockout', title:'Блокаут уровня', desc:'Начните с simple blockout для композиции.'}, 
-      {label:'Asset List', title:'Список ассетов', desc:'Создайте полный список необходимых ассетов.'}, 
-      {label:'Modular Flex', title:'Гибкость модулей', desc:'Создавайте модули с вариантами использования.'}, 
-      {label:'Environment Story', title:'История окружения', desc:'Рассказывайте историю через детали окружения.'}, 
-      {label:'Lighting Mood', title:'Настроение света', desc:'Свет задаёт настроение всей локации.'}, 
-      {label:'Player Path', title:'Путь игрока', desc:'Направляйте игрока через composition и light.'}, 
     ]
   },
   {
@@ -805,17 +715,6 @@ const CHEAT_SHEETS = [
       {label:'History',       title:'Ctrl+Z ×100',            desc:'Большая история отмен. Не бойтесь экспериментировать. Используйте Snapshots для сохранения состояния.'},
       {label:'Udim в SP 2023',title:'Мультитайл UV',          desc:'Substance Painter 2023+ поддерживает UDIM. Текстурируйте высокодетализированных персонажей без ограничений.'},
       {label:'Bake from Mesh',title:'Быстрое запекание',      desc:'Добавьте High-Poly меш в Texture Set Settings → Bake. Substance запечёт все Mesh Maps автоматически.'}
-    
-      {label:'Smart Mask', title:'Умная маска', desc:'Используйте smart masks для быстрого workflow.'}, 
-      {label:'Filter Stack', title:'Стек фильтров', desc:'Применяйте filters ко всему слою сразу.'}, 
-      {label:'Projection Map', title:'Проекционная карта', desc:'Project textures из фотографий референсов.'}, 
-      {label:'Material Library', title:'Библиотека материалов', desc:'Создайте library reusable материалов.'}, 
-      {label:'Texture Resolution', title:'Разрешение текстур', desc:'Выбирайте resolution под платформу.'}, 
-      {label:'Substance Share', title:'Substance Share', desc:'Используйте assets из Substance Share.'}, 
-    
-      {label:'Canvas Size', title:'Размер холста', desc:'Работайте в 2x resolution для деталей.'}, 
-      {label:'Reference Image', title:'Референс изображение', desc:'Импортируйте референсы в SP.'}, 
-      {label:'Export Template', title:'Шаблон экспорта', desc:'Сохраните export template для проекта.'}, 
     ]
   },
   {
@@ -840,13 +739,6 @@ const CHEAT_SHEETS = [
       {label:'Анимация',      title:'Для SK-мешей',          desc:'Проверьте все анимации: нет вывернутых костей, веса вершин корректны, Root Motion работает правильно.'},
       {label:'Документация',  title:'Скриншоты и описание',  desc:'Turntable рендер, вайрфрейм, UV, материалы. Описание: поликаунт, разрешение текстур, особенности.'},
       {label:'Code Review',   title:'Проверка в команде',    desc:'Покажите ассет лид-артисту. Получите фидбек до интеграции. Чем раньше — тем дешевле исправить.'}
-    
-      {label:'Final Polish', title:'Финальная полировка', desc:'Добавьте последние детали перед сдачей.'}, 
-      {label:'Bug Check', title:'Проверка багов', desc:'Проверьте на наличие известных багов.'}, 
-      {label:'Optimization Pass', title:'Пасс оптимизации', desc:'Сделайте финальный pass оптимизации.'}, 
-      {label:'Team Review', title:'Командный обзор', desc:'Проведите review с командой.'}, 
-      {label:'Client Feedback', title:'Фидбек клиента', desc:'Учтите весь фидбек от клиента.'}, 
-      {label:'Archive Project', title:'Архив проекта', desc:'Заархивируйте все файлы проекта.'}, 
     ]
   }
 ];
